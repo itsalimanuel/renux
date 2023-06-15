@@ -7,17 +7,12 @@ Find and replace all on all files (CMD+SHIFT+F):
 - Description: My new Nuxt module
 -->
 
-# My Module
+# Renux 🟩
 
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![License][license-src]][license-href]
-[![Nuxt][nuxt-src]][nuxt-href]
 
 ## Roadmap
 
-Renix UI Component Library is still under development, and there are more components planned for the future. Some of the upcoming components include:
-
+Renux UI Component Library is still under development, and there are more components planned for the future. Some of the upcoming components include:
 - Dropdown
 - Accordion
 - Pagination
@@ -46,7 +41,6 @@ Renix UI Component Library is still under development, and there are more compon
 - Navbar
 - Sidebar
 - Footer
-
 - Button
 - Line
 - Avatar
