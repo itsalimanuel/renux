@@ -4,19 +4,22 @@
     :class="[
       getTypeClass(),
       getSizeClass(),
-      { 'cursor-not-allowed': disabled || loading },
+      getIconClass(),
+      { 'is-disabled': disabled || loading },
       { 'is-loading': loading },
       { 'bg-opacity-50 hover:bg-opacity-100 transition-colors': plain },
       className,
     ]"
+    class="btn is-hover"
     :disabled="disabled"
     @click="handleClick"
   >
+    <img v-if="icon" :src="icon" alt="Icon" class="icon-renux" />
     <slot></slot>
     <svg
       v-if="loading"
       aria-hidden="true"
-      class="inline w-4 h-4 ml-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+      class="inline w-4 h-4 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +46,8 @@ interface ButtonProps {
   size?: "small" | "medium" | "large";
   className?: string;
   loading?: boolean;
+  icon?: string;
+  iconIs?: "right" | "left";
   onClick?: (event: MouseEvent) => void;
 }
 
@@ -80,6 +85,14 @@ export default defineComponent({
       type: Function as PropType<ButtonProps["onClick"]>,
       default: null,
     },
+    icon: {
+      type: String as PropType<ButtonProps["icon"]>,
+      default: null,
+    },
+    iconIs: {
+      type: String as PropType<ButtonProps["iconIs"]>,
+      default: "left",
+    },
   },
   methods: {
     handleClick(event: MouseEvent) {
@@ -111,40 +124,63 @@ export default defineComponent({
         return "is-default";
       }
     },
+    getIconClass() {
+      return {
+        "flex flex-row-reverse": this.iconIs === "right",
+        flex: this.iconIs === "left",
+      };
+    },
   },
 });
 </script>
 
 <style scoped>
-.type-info {
-  @apply text-gray-900  focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700;
+/* types */
+.btn {
+  @apply flex gap-5 items-center rounded;
 }
+.type-default {
+  @apply bg-black text-white;
+}
+.type-info {
+  @apply bg-slate-400 text-black hover:text-white;
+}
+
+.type-success {
+  @apply bg-[#11C0A1]  text-black;
+}
+.type-warning {
+  @apply bg-[#FF4930] text-white;
+}
+.type-danger {
+  @apply bg-[#D81A22] text-white;
+}
+.is-small {
+  @apply text-xs py-2 px-1.5 font-light;
+}
+.is-default {
+  @apply text-sm px-[15px] py-[7px] font-light;
+}
+.is-medium {
+  @apply px-5 py-2.5 text-sm font-medium;
+}
+
+.is-large {
+  @apply px-6 py-3 text-base font-medium;
+}
+
+/* is loading */
 .is-loading {
   @apply bg-opacity-60 cursor-not-allowed;
 }
-.type-success {
-  @apply focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800;
+.is-hover {
+  @apply hover:bg-opacity-80 transition-all;
 }
-.type-warning {
-  @apply focus:outline-none text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-900;
+.icon-renux {
+  @apply max-w-[25px] max-h-[20px];
 }
-.type-danger {
-  @apply focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900;
-}
-.type-default {
-  @apply bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-white dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800;
-}
-.is-large {
-  @apply px-5 py-3 text-base font-medium;
-}
-.is-medium {
-  @apply px-3 py-2 text-sm font-medium;
-}
-.is-default {
-  @apply text-sm px-5 py-2.5;
-}
-.is-small {
-  @apply px-3 py-2 text-xs font-medium;
+.is-disabled {
+  @apply cursor-not-allowed;
 }
 /* Add your custom styles here */
 </style>

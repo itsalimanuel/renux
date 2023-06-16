@@ -45,7 +45,7 @@ export default {
       return this.value && this.value >= this.max ? `${this.max}+` : this.value;
     },
     buttonClass() {
-      return `relative px-4 py-2 rounded hover:bg-blue-300 hover:bg-opacity-20 dark:bg-black  ${
+      return `relative dark-blue px-4 py-2 rounded hover:bg-blue-300 hover:bg-opacity-20 dark:bg-black  ${
         this.className ? this.className : ""
       }`;
     },
@@ -75,3 +75,8 @@ export default {
   },
 };
 </script>
+
+
+<style scoped>
+
+</style>

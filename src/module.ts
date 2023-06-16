@@ -38,5 +38,6 @@ export default defineNuxtModule<ModuleOptions>({
         },
       },
     });
+    nuxt.options.css.push(resolver.resolve("./renux.css"));
   },
 });
