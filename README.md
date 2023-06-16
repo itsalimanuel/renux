@@ -2,17 +2,21 @@
 Get your module up and running quickly.
 
 Find and replace all on all files (CMD+SHIFT+F):
-- Name: My Module
-- Package name: my-module
-- Description: My new Nuxt module
+- Name: Renux
+- Package name: @renux/nuxt
+- Description: It's a UI/Component library built for NuxtJS projects  is still under development, and there are more components planned for the future
 -->
 
 # Renux 🟩
 
+It's a UI/Component library built for NuxtJS projects  is still under development, and there are more components planned for the future.
+
+---
 
 ## Roadmap
 
-Renux UI Component Library is still under development, and there are more components planned for the future. Some of the upcoming components include:
+ Some of the upcoming components include:
+
 - Dropdown
 - Accordion
 - Pagination
@@ -59,4 +63,4 @@ Renux UI Component Library is still under development, and there are more compon
 
 ## Contribution
 
-If you want to contribute to the development of Renix UI Component Library, please feel free to contact us!
+If you want to contribute to the development of Renux UI Component Library, please feel free to contact me @itsalimanuel
