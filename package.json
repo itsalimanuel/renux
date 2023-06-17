@@ -1,6 +1,7 @@
 {
-  "name": "renux-test",
-  "version": "1.1.19",
+  "name": "@renux/ui",
+  "version": "1.1.20",
+  "private": "true",
   "description": "Renux UI Component module made for NuxtJS",
   "repository": "https://github.com/itsalimanuel/renux",
   "license": "MIT",
