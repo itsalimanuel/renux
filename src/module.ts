@@ -7,7 +7,6 @@ import {
   addComponent,
 } from "@nuxt/kit";
 import { fileURLToPath } from "url";
-
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   addPlugin: boolean
