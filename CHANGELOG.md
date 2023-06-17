@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.1.9
+
+[compare changes](https://github.com/itsalimanuel/renux/compare/v1.1.7...v1.1.9)
+
+
+### 🏡 Chore
+
+  - **release:** V1.1.2 ([a98f0d3](https://github.com/itsalimanuel/renux/commit/a98f0d3))
+
+### ❤️  Contributors
+
+- Itsalimanuel <itskhalofuali@gmail.com>
+
 ## v1.1.2
 
 [compare changes](https://github.com/itsalimanuel/renux/compare/v1.1.7...v1.1.2)
