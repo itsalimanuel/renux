@@ -1,8 +1,27 @@
 <template>
   <div>
-    Nuxt module playground!
+    Nuxt module playground! 2
   </div>
-  <Button type="danger" class-name="mt-3">Click me</Button>
+  <Button
+    type="info"
+    :icon="googlePay"
+    dir="ltr"
+    size="small"
+    class-name="mt-3 uppercase"
+    @click="alert"
+  >
+    Click me
+  </Button>
+
+  <hr>
+  <Avatar
+    size="large"
+    type="rounded"
+    :border="true"
+    :icon="icon"
+    class-name="object-cover"
+    name="Ali"
+  />
 </template>
 
 <script>
@@ -18,7 +37,7 @@ export default {
   },
   methods: {
     alert() {
-      alert(this.max);
+      alert(`this.max`);
     },
   },
 };

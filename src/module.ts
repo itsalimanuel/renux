@@ -1,4 +1,3 @@
-
 import {
   defineNuxtModule,
   addPlugin,
@@ -9,7 +8,7 @@ import {
 import { fileURLToPath } from "url";
 // Module options TypeScript interface definition
 export interface ModuleOptions {
-  addPlugin: boolean
+  addPlugin: boolean;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -20,18 +19,23 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   setup(_options, nuxt) {
     // add compoeonents
-    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
+    const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
     const resolver = createResolver(import.meta.url);
-    const ButtonCompoeont = resolver.resolve(runtimeDir,"components/Button")
+    const ButtonCompoeont = resolver.resolve(runtimeDir, "components/Button");
+    const AvatarComponent = resolver.resolve(runtimeDir, "components/Avatar");
     addComponent({
       name: "Button",
-      filePath: resolver.resolve(ButtonCompoeont,"index.vue")
-    })
+      filePath: resolver.resolve(ButtonCompoeont, "index.vue"),
+    });
+    addComponent({
+      name: "Avatar",
+      filePath: resolver.resolve(AvatarComponent, "index.vue"),
+    });
 
-    nuxt.options.build.transpile.push(runtimeDir)
+    nuxt.options.build.transpile.push(runtimeDir);
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     // addPlugin(resolver.resolve("./runtime/plugin"));
-    addPlugin(resolver.resolve(runtimeDir,'plugin'))
+    addPlugin(resolver.resolve(runtimeDir, "plugin"));
     installModule("@nuxtjs/tailwindcss", { classSuffix: "" });
     installModule("@nuxtjs/tailwindcss", {
       exposeConfig: true,
@@ -39,7 +43,11 @@ export default defineNuxtModule<ModuleOptions>({
         darkMode: "class",
         content: {
           files: [
-            resolver.resolve(runtimeDir,"@/components/**/*.{vue,mjs,ts}", "*.{mjs,js,ts}"),
+            resolver.resolve(
+              runtimeDir,
+              "@/components/**/*.{vue,mjs,ts}",
+              "*.{mjs,js,ts}"
+            ),
           ],
         },
       },
