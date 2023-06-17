@@ -1,6 +1,6 @@
 {
-  "name": "@renux",
-  "version": "1.1.13",
+  "name": "@renux/ui",
+  "version": "1.1.14",
   "description": "Renux UI Component module made for NuxtJS",
   "repository": "https://github.com/itsalimanuel/renux",
   "license": "MIT",
