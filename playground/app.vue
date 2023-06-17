@@ -1,51 +1,8 @@
 <template>
   <div>
     Nuxt module playground!
-    <alert />
-    <Button class-name="mt-4 mx-2" @click="alert"> Button </Button>
-    <Button type="info" class-name="mt-4 mx-2" @click="alert"> Button </Button>
-    <Button size="medium" type="success" class-name="mt-4 mx-2">
-      Button
-    </Button>
-    <Button size="medium" type="warning" class-name="mt-4 mx-2">
-      Button
-    </Button>
-    <Button size="medium" type="danger" class-name="mt-4 mx-2"> Button </Button>
-    <div class="flex items-center gap-2">
-      <Button type="info" size="small" class-name="mt-4 mx-2" @click="alert">
-        Button
-      </Button>
-      <Button class-name="mt-4 mx-2" @click="alert"> Button </Button>
-      <Button size="medium" type="success" class-name="mt-4 mx-2">
-        Button
-      </Button>
-      <Button size="large" type="warning" class-name="mt-4 mx-2">
-        Button
-      </Button>
-      <Button size="medium" type="danger" class-name="mt-4 mx-2">
-        Button
-      </Button>
-    </div>
-    <div class="flex items-center gap-2">
-      <Button :loading="true" type="info" size="small" class-name="mt-4 mx-2" @click="alert">
-        Button
-      </Button>
-      <Button :loading="true" class-name="mt-4 mx-2" @click="alert"> Button </Button>
-      <Button :loading="true" size="medium" type="success" class-name="mt-4 mx-2">
-        Button
-      </Button>
-      <Button :loading="true" size="large" type="warning" class-name="mt-4 mx-2">
-        Button
-      </Button>
-      <Button :loading="true" size="medium" type="danger" class-name="mt-4 mx-2">
-        Button
-      </Button>
-    </div>
-    <div class="flex items-center">
-      <Button disabled :icon="icon" class-name="mt-4 mx-2" @click="alert"> Button </Button>
-      <Button icon-is="right" :icon="googlePay" class-name="mt-4 mx-2" @click="alert"> Pay with google </Button>
-    </div>
   </div>
+  <Button type="danger" class-name="mt-3">Click me</Button>
 </template>
 
 <script>

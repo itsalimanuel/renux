@@ -14,8 +14,13 @@
     :disabled="disabled"
     @click="handleClick"
   >
-    <img v-if="icon" :src="icon" alt="Icon" class="icon-renux" />
-    <slot></slot>
+    <img
+      v-if="icon"
+      :src="icon"
+      alt="Icon"
+      class="icon-renux"
+    >
+    <slot />
     <svg
       v-if="loading"
       aria-hidden="true"
@@ -37,7 +42,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType, reactive } from "vue";
 
 interface ButtonProps {
   type?: "primary" | "success" | "info" | "warning" | "danger";
@@ -94,44 +99,61 @@ export default defineComponent({
       default: "left",
     },
   },
-  methods: {
-    handleClick(event: MouseEvent) {
-      if (!this.disabled && !this.loading && this.onClick) {
-        this.onClick(event);
+  setup(props) {
+    const state = reactive({
+      disabled: props.disabled || false,
+      loading: props.loading || false,
+    });
+
+    const handleClick = (event: MouseEvent) => {
+      if (!state.disabled && !state.loading && props.onClick) {
+        props.onClick(event);
       }
-    },
-    getTypeClass() {
-      if (this.type === "info") {
+    };
+
+    const getTypeClass = () => {
+      if (props.type === "info") {
         return "type-info";
-      } else if (this.type === "success") {
+      } else if (props.type === "success") {
         return "type-success";
-      } else if (this.type === "warning") {
+      } else if (props.type === "warning") {
         return "type-warning";
-      } else if (this.type === "danger") {
+      } else if (props.type === "danger") {
         return "type-danger";
       } else {
         return "type-default";
       }
-    },
-    getSizeClass() {
-      if (this.size === "small") {
+    };
+
+    const getSizeClass = () => {
+      if (props.size === "small") {
         return "is-small";
-      } else if (this.size === "medium") {
+      } else if (props.size === "medium") {
         return "is-medium";
-      } else if (this.size === "large") {
+      } else if (props.size === "large") {
         return "is-large";
       } else {
         return "is-default";
       }
-    },
-    getIconClass() {
+    };
+
+    const getIconClass = () => {
       return {
-        "flex flex-row-reverse": this.iconIs === "right",
-        flex: this.iconIs === "left",
+        "flex flex-row-reverse": props.iconIs === "right",
+        flex: props.iconIs === "left",
       };
-    },
+    };
+
+    return {
+      state,
+      handleClick,
+      getTypeClass,
+      getSizeClass,
+      getIconClass,
+    };
   },
 });
+
 </script>
 
 <style scoped>
