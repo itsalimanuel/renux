@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v1.1.19
+
+[compare changes](https://github.com/itsalimanuel/renux/compare/v1.1.18...v1.1.19)
+
 ## v1.1.18
 
 [compare changes](https://github.com/itsalimanuel/renux/compare/v1.1.17...v1.1.18)
