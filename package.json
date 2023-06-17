@@ -1,8 +1,11 @@
 {
   "name": "@renux/ui",
-  "version": "1.1.22",
+  "version": "1.0.1",
   "description": "Renux UI Component module made for NuxtJS",
-  "repository": "https://github.com/itsalimanuel/renux",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsalimanuel/renux.git"
+  },
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -44,5 +47,13 @@
     "eslint": "^8.42.0",
     "nuxt": "^3.5.1",
     "vitest": "^0.31.4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/itsalimanuel/renux/issues"
+  },
+  "homepage": "https://github.com/itsalimanuel/renux#readme",
+  "directories": {
+    "test": "test"
+  },
+  "author": "itsalimanuel"
 }
