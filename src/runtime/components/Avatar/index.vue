@@ -130,7 +130,7 @@ export default defineComponent({
   @apply rounded-[50%];
 }
 .is-border {
-  @apply border border-solid ring-black dark:ring-white;
+  @apply border border-solid ring-2 ring-white dark:ring-black;
 }
 .is-name {
   @apply flex items-center justify-center text-xs uppercase bg-stone-400;
