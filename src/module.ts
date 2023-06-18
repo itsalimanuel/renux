@@ -23,6 +23,10 @@ export default defineNuxtModule<ModuleOptions>({
     const resolver = createResolver(import.meta.url);
     const ButtonCompoeont = resolver.resolve(runtimeDir, "components/Button");
     const AvatarComponent = resolver.resolve(runtimeDir, "components/Avatar");
+    const AvatarGroupComponent = resolver.resolve(
+      runtimeDir,
+      "components/AvatarGroup"
+    );
     addComponent({
       name: "Button",
       filePath: resolver.resolve(ButtonCompoeont, "index.vue"),
@@ -31,7 +35,10 @@ export default defineNuxtModule<ModuleOptions>({
       name: "Avatar",
       filePath: resolver.resolve(AvatarComponent, "index.vue"),
     });
-
+    addComponent({
+      name: "AvatarGroup",
+      filePath: resolver.resolve(AvatarGroupComponent, "index.vue"),
+    });
     nuxt.options.build.transpile.push(runtimeDir);
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     // addPlugin(resolver.resolve("./runtime/plugin"));

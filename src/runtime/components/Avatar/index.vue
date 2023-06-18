@@ -9,10 +9,15 @@
   </template>
   <template v-else>
     <div
-      :class="[getSize(), getType(),getBorder(), className]"
+      :class="[getSize(), getType(), getBorder(), className]"
       class="m-auto is-name"
     >
-      {{ name?.slice(0, 1) }}
+      <template v-if="typeof name === 'string'">
+        {{ name?.slice(0, 1) }}
+      </template>
+      <template v-else-if="typeof name === 'number'">
+        +{{ name?.toString().slice(0, 3) }}
+      </template>
     </div>
   </template>
 </template>
@@ -27,7 +32,7 @@ interface AvatarProps {
   icon?: string;
   type?: "square" | "circle" | "rounded";
   className?: string;
-  name?: string;
+  name?: string | number;
 }
 export default defineComponent({
   props: {
@@ -60,7 +65,7 @@ export default defineComponent({
         ["square", "circle", "rounded"].includes(value),
     },
     name: {
-      type: String as PropType<AvatarProps["name"]>,
+      type: [String, Number] as PropType<AvatarProps["name"]>,
       default: "name",
     },
   },
