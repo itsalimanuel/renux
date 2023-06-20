@@ -1,21 +1,11 @@
-<!--
-Get your module up and running quickly.
+# Renux UI Component Nuxt Module (Under Development)
 
-Find and replace all on all files (CMD+SHIFT+F):
-- Name: Renux
-- Package name: @renux/nuxt
-- Description: It's a UI/Component library built for NuxtJS projects  is still under development, and there are more components planned for the future
--->
 
-# Renux 🟩
+This is the Renux UI Component Nuxt Module, an under-development module created by [itskhaloufali](https://github.com/itsalimanuel). It provides a collection of customizable and reusable UI components for building web applications with Nuxt.js.
 
-It's a UI/Component library built for NuxtJS projects  is still under development, and there are more components planned for the future.
+## Available Components
 
----
-
-## Roadmap
-
- Some of the upcoming components include:
+Here is a list of the available UI components provided by the Renux UI Component Nuxt Module:
 
 - Dropdown
 - Accordion
@@ -34,7 +24,7 @@ It's a UI/Component library built for NuxtJS projects  is still under developmen
 - Upload
 - Description
 - Empty
-- Tabel
+- Table
 - Tag
 - Menu
 - Notification
@@ -61,6 +51,16 @@ It's a UI/Component library built for NuxtJS projects  is still under developmen
 - BackToTop
 - Tooltip
 
-## Contribution
+Please note that some components appear multiple times in the list. Make sure to import the desired component(s) in your project.
 
-If you want to contribute to the development of Renux UI Component Library, please feel free to contact me @itsalimanuel
+## Contributing
+
+As this module is under development, contributions are currently not being accepted. However, feel free to report any issues or suggestions in the [GitHub repository](https://github.com/itsalimanuel/renux/issues).
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/itsalimanuel/renux/blob/main/LICENSE). Please refer to the license file for more information.
+
+## Contact
+
+For any inquiries or questions, you can reach out to [itskhaloufali](https://github.com/itskhaloufali) .
