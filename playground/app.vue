@@ -1,7 +1,8 @@
 <!-- eslint-disable vue/max-attributes-per-line -->
 <template>
   <div>
-    <!-- body -->
+    <!-- <Avatar :icon="person" /> -->
+    <!-- data -->
   </div>
 </template>
 
@@ -12,19 +13,20 @@ import luz from "../assets/luz.png";
 export default {
   data() {
     return {
+      searchKey: '',
       max: false,
       list: [
         {
           id: 1,
-          icon: luz,
+          name: 'luz',
         },
         {
           id: 2,
-          icon: bodyIcon,
+          name: 'ali',
         },
         {
           id: 3,
-          icon: luz,
+          name: 'alejo',
         },
       ],
       person,

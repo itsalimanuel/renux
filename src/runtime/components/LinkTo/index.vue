@@ -9,7 +9,10 @@
     >
       <slot />
     </NuxtLink>
-    <span v-else :class="[className, getType(), setUnderline(), getDisabled()]">
+    <span
+      v-else
+      :class="[className, getType(), setUnderline(), getDisabled()]"
+    >
       <slot />
     </span>
   </div>

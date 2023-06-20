@@ -21,13 +21,18 @@ export default defineNuxtModule<ModuleOptions>({
     // add compoeonents
     const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
     const resolver = createResolver(import.meta.url);
-    const LinkToComponent = resolver.resolve(runtimeDir,"components/LinkTo")
+    const ImageToComponent = resolver.resolve(runtimeDir,"components/ImageTo")
+    const LinkToComponent = resolver.resolve(runtimeDir, "components/LinkTo");
     const ButtonCompoeont = resolver.resolve(runtimeDir, "components/Button");
     const AvatarComponent = resolver.resolve(runtimeDir, "components/Avatar");
     const AvatarGroupComponent = resolver.resolve(
       runtimeDir,
       "components/AvatarGroup"
     );
+    addComponent({
+      name: "ImageTo",
+      filePath: resolver.resolve(ImageToComponent,"index.vue")
+    })
     addComponent({
       name: "Button",
       filePath: resolver.resolve(ButtonCompoeont, "index.vue"),
@@ -42,13 +47,14 @@ export default defineNuxtModule<ModuleOptions>({
     });
     addComponent({
       name: "LinkTo",
-      filePath: resolver.resolve(LinkToComponent,"index.vue")
-    })
+      filePath: resolver.resolve(LinkToComponent, "index.vue"),
+    });
     nuxt.options.build.transpile.push(runtimeDir);
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     // addPlugin(resolver.resolve("./runtime/plugin"));
     addPlugin(resolver.resolve(runtimeDir, "plugin"));
     installModule("@nuxtjs/tailwindcss", { classSuffix: "" });
+    installModule("@nuxt/image")
     installModule("@nuxtjs/tailwindcss", {
       exposeConfig: true,
       config: {
