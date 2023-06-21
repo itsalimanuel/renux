@@ -21,7 +21,8 @@ export default defineNuxtModule<ModuleOptions>({
     // add compoeonents
     const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
     const resolver = createResolver(import.meta.url);
-    const ImageToComponent = resolver.resolve(runtimeDir,"components/ImageTo")
+    const InputComponent = resolver.resolve(runtimeDir, "components/Input");
+    const ImageToComponent = resolver.resolve(runtimeDir, "components/ImageTo");
     const LinkToComponent = resolver.resolve(runtimeDir, "components/LinkTo");
     const ButtonCompoeont = resolver.resolve(runtimeDir, "components/Button");
     const AvatarComponent = resolver.resolve(runtimeDir, "components/Avatar");
@@ -30,9 +31,13 @@ export default defineNuxtModule<ModuleOptions>({
       "components/AvatarGroup"
     );
     addComponent({
+      name: "Input",
+      filePath: resolver.resolve(InputComponent, "index.vue"),
+    });
+    addComponent({
       name: "ImageTo",
-      filePath: resolver.resolve(ImageToComponent,"index.vue")
-    })
+      filePath: resolver.resolve(ImageToComponent, "index.vue"),
+    });
     addComponent({
       name: "Button",
       filePath: resolver.resolve(ButtonCompoeont, "index.vue"),
@@ -54,7 +59,7 @@ export default defineNuxtModule<ModuleOptions>({
     // addPlugin(resolver.resolve("./runtime/plugin"));
     addPlugin(resolver.resolve(runtimeDir, "plugin"));
     installModule("@nuxtjs/tailwindcss", { classSuffix: "" });
-    installModule("@nuxt/image")
+    installModule("@nuxt/image");
     installModule("@nuxtjs/tailwindcss", {
       exposeConfig: true,
       config: {
