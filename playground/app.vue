@@ -1,29 +1,15 @@
 <!-- eslint-disable vue/max-attributes-per-line -->
 <template>
   <div>
-    <!-- <Avatar :icon="person" /> -->
-    <!-- data -->
-    <Input
-      label="Name"
-      html-for="name"
-      :required="true"
-      placeholder="number"
-      :change="searchKey"
-
-      type="text"
-      flex="col"
-    />
-    <input type="text" v-model="searchKey">
-   search: {{ searchKey }}
+    <image-to src="https://static.okx.com/cdn/announce/20230419/168187541969745fb238e-d1b3-4ce6-962b-13437f92960d.png" alt=""/>
   </div>
 </template>
 
 <script>
-
 export default {
   data() {
     return {
-      searchKey: ''
+      icon: '../assets/luz.png'
     }
   }
 }
