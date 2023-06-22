@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <img
+  <nuxt-img
     :src="src"
     :width="width"
     :height="height"
@@ -10,7 +10,7 @@
     :class="{'preload': preload}"
     :srcset="srcset"
     :style="imgStyle"
-  >
+  />
 </template>
 
 <script lang="ts">
