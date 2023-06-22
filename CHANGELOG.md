@@ -1,6 +1,32 @@
 # Changelog
 
 
+## v1.3.0
+
+[compare changes](https://github.com/itsalimanuel/renux/compare/v1.0.1...v1.3.0)
+
+
+### 🚀 Enhancements
+
+  - Avatar-group ([dcc478f](https://github.com/itsalimanuel/renux/commit/dcc478f))
+  - LinkTo Component ([407b245](https://github.com/itsalimanuel/renux/commit/407b245))
+  - Image ([ba69e25](https://github.com/itsalimanuel/renux/commit/ba69e25))
+  - Input ([1216941](https://github.com/itsalimanuel/renux/commit/1216941))
+  - Accordion ([e6c73e0](https://github.com/itsalimanuel/renux/commit/e6c73e0))
+
+### 🩹 Fixes
+
+  - Ring/avatar ([9d487d2](https://github.com/itsalimanuel/renux/commit/9d487d2))
+  - Image-to ([0a64965](https://github.com/itsalimanuel/renux/commit/0a64965))
+
+### 🏡 Chore
+
+  - **release:** V1.1.0 ([6ed413d](https://github.com/itsalimanuel/renux/commit/6ed413d))
+
+### ❤️  Contributors
+
+- Itsalimanuel <itskhalofuali@gmail.com>
+
 ## v1.1.0
 
 [compare changes](https://github.com/itsalimanuel/renux/compare/v1.0.1...v1.1.0)
