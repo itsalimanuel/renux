@@ -5,13 +5,14 @@
     :class="[getFlex()]"
   >
     <span :class="[getRequired()]">{{ label }}</span>
+
     <div
       v-if="showPassword"
       class="group"
     >
       <input
         v-if="type === 'password'"
-        v-model="change"
+        v-model="vModel"
         :class="[getSize()]"
         :name="htmlFor"
         :required="required"
@@ -93,7 +94,7 @@ interface InputProps {
   flex?: "row" | "col";
   type?: "text" | "email" | "password" | "number";
   showPassword?: boolean;
-  change?: string;
+  vModel?: string;
 }
 
 export default defineComponent({
@@ -120,8 +121,8 @@ export default defineComponent({
       type: String as PropType<InputProps["placeholder"]>,
       default: "Enter your text",
     },
-    change: {
-      type: String as PropType<InputProps["change"]>,
+    vModel: {
+      type: String as PropType<InputProps["vModel"]>,
       default: '',
     },
     required: {

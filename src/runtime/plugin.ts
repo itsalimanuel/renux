@@ -5,6 +5,7 @@ import AvatarGroup from "./components/AvatarGroup/index.vue";
 import LinkTo from "./components/LinkTo/index.vue";
 import ImageTo from "./components/ImageTo/index.vue";
 import Input from './components/Input/index.vue'
+import Accordion from './components/Accordion/index.vue'
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.provide("Button", Button);
   nuxtApp.provide("Avatar", Avatar);
@@ -12,4 +13,5 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.provide("Link-To", LinkTo);
   nuxtApp.provide("Image-To", ImageTo);
   nuxtApp.provide("Input",Input)
+  nuxtApp.provide("Accordion",Accordion)
 });

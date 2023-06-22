@@ -1,7 +1,14 @@
 <!-- eslint-disable vue/max-attributes-per-line -->
 <template>
   <div>
-    <image-to src="https://static.okx.com/cdn/announce/20230419/168187541969745fb238e-d1b3-4ce6-962b-13437f92960d.png" alt=""/>
+    <accordion title="header">
+      <span
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab minus
+        dolores delectus, eveniet, alias porro obcaecati ipsum quas nostrum
+        ducimus consequuntur eum beatae et laudantium quisquam neque doloribus
+        sapiente consectetur.</span
+      >
+    </accordion>
   </div>
 </template>
 
@@ -9,9 +16,9 @@
 export default {
   data() {
     return {
-      icon: '../assets/luz.png'
-    }
-  }
-}
-
+      icon: "../assets/luz.png",
+      name: "",
+    };
+  },
+};
 </script>
