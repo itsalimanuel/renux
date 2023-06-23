@@ -21,19 +21,30 @@ export default defineNuxtModule<ModuleOptions>({
     // add compoeonents
     const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
     const resolver = createResolver(import.meta.url);
-    const AccordionComponent = resolver.resolve(runtimeDir,"components/Accordion")
+    const AccordionComponent = resolver.resolve(
+      runtimeDir,
+      "components/Accordion"
+    );
     const ImageToComponent = resolver.resolve(runtimeDir, "components/ImageTo");
     const LinkToComponent = resolver.resolve(runtimeDir, "components/LinkTo");
     const ButtonCompoeont = resolver.resolve(runtimeDir, "components/Button");
     const AvatarComponent = resolver.resolve(runtimeDir, "components/Avatar");
+    const CascaderComponent = resolver.resolve(
+      runtimeDir,
+      "components/Cascader"
+    );
     const AvatarGroupComponent = resolver.resolve(
       runtimeDir,
       "components/AvatarGroup"
     );
     addComponent({
+      name: "Cascader",
+      filePath: resolver.resolve(CascaderComponent, "index.vue"),
+    });
+    addComponent({
       name: "Accordion",
-      filePath: resolver.resolve(AccordionComponent,"index.vue")
-    })
+      filePath: resolver.resolve(AccordionComponent, "index.vue"),
+    });
     addComponent({
       name: "ImageTo",
       filePath: resolver.resolve(ImageToComponent, "index.vue"),

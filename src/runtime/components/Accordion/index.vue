@@ -80,7 +80,7 @@ export default defineComponent({
 }
 
 .header {
-  @apply flex items-center justify-between;
+  @apply flex items-center justify-between cursor-pointer;
 }
 
 .icon {
