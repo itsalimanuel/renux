@@ -46,7 +46,7 @@
     "@types/node": "^18",
     "changelogen": "^0.5.3",
     "eslint": "^8.42.0",
-    "nuxt": "^3.5.1",
+    "nuxt": "^3.12.4",
     "vitest": "^0.31.4"
   },
   "bugs": {
